@@ -1,0 +1,33 @@
+/* Estilo para o botão Voltar */
+.btn-back {
+  background-color: #003366; /* Azul-marinho */
+  color: #121212; /* Texto branco */
+  padding: 10px 20px; /* Espaçamento interno */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px; /* Espaçamento abaixo do botão */
+}
+
+/* Efeito de hover para o botão Voltar */
+.btn-back:hover {
+  background-color: #019faf;
+}
+
+/* Estilo dos botões dentro dos itens de filmes */
+.movie-item button {
+  background-color: #019faf;
+  color: #121212; /* Texto branco */
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Efeito de hover para os botões dos itens de filmes */
+.movie-item button:hover {
+  background-color: #019faf;
+}

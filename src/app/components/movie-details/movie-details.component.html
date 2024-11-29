@@ -1,0 +1,8 @@
+<div class="details" *ngIf="movieDetails">
+  <img [src]="movieDetails.Poster" alt="{{ movieDetails.Title }}" />
+  <h2>{{ movieDetails.Title }}</h2>
+  <p><strong>Ano:</strong> {{ movieDetails.Year }}</p>
+  <p><strong>Elenco:</strong> {{ movieDetails.Actors }}</p>
+  <p><strong>Sinopse:</strong> {{ movieDetails.Plot }}</p>
+</div>
+<p *ngIf="errorMessage">{{ errorMessage }}</p>

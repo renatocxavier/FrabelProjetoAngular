@@ -1,0 +1,34 @@
+<div class="container-filmes">
+  <div class="search">
+    <input [(ngModel)]="searchQuery" placeholder="Digite o título do filme ou série..." class="pesquisa" />
+    <button (click)="searchMovies()">Buscar</button>
+    <button (click)="goToFavorites()">Ver Favoritos</button> <!-- Botão para favoritos -->
+  </div>
+
+  <p *ngIf="errorMessage">{{ errorMessage }}</p>
+
+  <div class="movies-grid" *ngIf="movies.length > 0">
+    <div class="movie-item" *ngFor="let movie of movies">
+      <img [src]="movie.Poster" alt="{{ movie.Title }}" />
+      <h3>{{ movie.Title }}</h3>
+      <p><strong>Atores:</strong> {{ movie.Actors || 'Não disponível' }}</p>
+      <p><strong>Classificação:</strong> {{ movie.Rated || 'Não disponível' }}</p>
+      <p><strong>Tempo de Duração:</strong> {{ movie.Runtime || 'Não disponível' }}</p>
+      <p><strong>Prêmios:</strong> {{ movie.Awards || 'Não disponível' }}</p>
+      <p><strong>Sinopse:</strong> {{ movie.Plot || 'Não disponível' }}</p>
+
+      <button (click)="toggleFavorite(movie)">
+        {{ isFavorite(movie.imdbID) ? 'Remover dos Favoritos' : 'Adicionar aos Favoritos' }}
+      </button>
+    </div>
+  </div>
+
+
+
+
+  <div class="pagination">
+    <button (click)="changePage(-1)" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{ currentPage }}</span>
+    <button (click)="changePage(1)">Próxima</button>
+  </div>
+</div>

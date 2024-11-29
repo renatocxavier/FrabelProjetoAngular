@@ -1,0 +1,20 @@
+<div class="container-favorites">
+  <!-- Botão para voltar no começo da tela -->
+  <button class="btn-back" (click)="goBack()">Voltar</button>
+
+  <h2>Filmes Favoritos</h2>
+
+  <!-- Mensagem caso não haja filmes favoritos -->
+  <p *ngIf="favoriteMovies.length === 0">Nenhum filme foi adicionado aos favoritos.</p>
+
+  <!-- Grid de filmes favoritos -->
+  <div class="movies-grid" *ngIf="favoriteMovies.length > 0">
+    <div class="movie-item" *ngFor="let movie of favoriteMovies">
+      <img [src]="movie.Poster" alt="{{ movie.Title }}" />
+      <h3>{{ movie.Title }}</h3>
+      <p>{{ movie.Year }}</p>
+      <button (click)="removeFavorite(movie.imdbID)">Remover dos Favoritos</button>
+    </div>
+  </div>
+</div>
+
